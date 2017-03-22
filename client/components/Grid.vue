@@ -35,8 +35,7 @@
       this.gridOptions = {};
       this.gridOptions.rowData = this.createRowData();
       this.gridOptions.columnDefs = this.createColumnDefs();
-    },
-    computed
+    }
   }
 </script>
 
