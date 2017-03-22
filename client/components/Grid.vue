@@ -42,6 +42,8 @@
 <style>
   .gridWrapper {
     width: 450px;
+    margin: auto;
+    margin-top: 20px;
   }
 </style>
 
