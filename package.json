@@ -12,6 +12,8 @@
   "author": "tslilcrispel <tcrispel@gmail.com>",
   "license": "MIT",
   "dependencies": {
+    "ag-grid": "^8.2.0",
+    "ag-grid-vue": "^8.2.0",
     "babel-runtime": "^6.18.0",
     "promise-polyfill": "^6.0.2",
     "vue": "^2.1.0",

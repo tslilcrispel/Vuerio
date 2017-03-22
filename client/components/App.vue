@@ -3,7 +3,7 @@
    <ul>
       <li><a>Home</a></li>
       <li><a>News</a></li>
-    </ul> 
+    </ul>
     <router-view></router-view>
   </div>
 </template>
