@@ -3,6 +3,7 @@
     <ag-grid-vue style="width: 100%; height: 350px;" class="ag-fresh"
                  :gridOptions="gridOptions">
     </ag-grid-vue>
+    <button @click="$store.dispatch('getGridData')">Get Data</button>
   </div>
 </template>
 
