@@ -4,6 +4,7 @@
                  :gridOptions="gridOptions">
     </ag-grid-vue>
     <button @click="$store.dispatch('getGridData')">Get Data</button>
+    <p>{{ gridData }}</p>
   </div>
 </template>
 
@@ -22,20 +23,27 @@
     },
     methods: {
       createRowData() {
-        return this.$store.state.gridData
+        this.$store.dispatch('getGridData');
       },
       createColumnDefs() {
         return [
-          {headerName: "צליל", field: "row", width: 150},
-          {headerName: "עוד עברית",  field: "name", width: 150},
-          {headerName: "Bamba", field: "bamba", width: 150}
+          {headerName: "index", field: "index", width: 150},
+          {headerName: "עוד עברית",  field: "", width: 150},
+          {headerName: "Bamba", field: "", width: 150}
         ];
       }
     },
+    computed: {
+      gridData() {
+        return this.$store.getters.gridData;
+      }
+    },
     beforeMount() {
-      this.gridOptions = {};
-      this.gridOptions.rowData = this.createRowData();
-      this.gridOptions.columnDefs = this.createColumnDefs();
+      this.createRowData
+      console.log(this.gridData)
+      this.gridOptions = {}
+      this.gridOptions.rowData = this.gridData
+      this.gridOptions.columnDefs = this.createColumnDefs()
     }
   }
 </script>

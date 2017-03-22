@@ -3,7 +3,7 @@
  */
 
 export default {
-  DECREMENT(state) {
-    state.count--
+  getGridData(state, data) {
+    state.gridData = data
   }
 }
