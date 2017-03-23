@@ -4,14 +4,15 @@
 
 import request from 'axios'
 
-// request.defaults.baseURL = 'http://jsonplaceholder.typicode.com/'
-
 export default {
   getGridData({ commit }) {
     const jsonData = require('./data.json');
-    return request.get('/asd').then(response => {
-      commit('getGridData', jsonData);
-      console.log(jsonData)
+    return request.get('/emptyUrl').then(response => {
+      setTimeout(() => {
+        commit('getGridData', jsonData)
+        commit('createGridColumns', jsonData)
+        console.log(jsonData)
+      }, 500)
     })
   }
 }

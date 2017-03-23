@@ -3,18 +3,20 @@ import Vuex from 'vuex'
 
 import actions from './actions.js'
 import mutations from './mutations.js'
+import getters from './getters.js'
 
 Vue.use(Vuex)
 
 const state = {
-  count: 0,
-  gridData: {}
+  gridData: [],
+  gridColumns: []
 }
 
 const store = new Vuex.Store({
   state,
   mutations,
-  actions
+  actions,
+  getters
 })
 
 export default store

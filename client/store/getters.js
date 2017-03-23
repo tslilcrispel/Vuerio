@@ -3,7 +3,9 @@
  */
 
 export default {
-  gridData(state) {
-    return state.gridData;
+  getColumnsIDs(state) {
+    return state.gridColumns.map(columnDef => {
+      return columnDef.field
+    })
   }
 }

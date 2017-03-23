@@ -6,10 +6,7 @@
     "balance": "$1,534.12",
     "age": 28,
     "eyeColor": "brown",
-    "name": {
-      "first": "Shaffer",
-      "last": "Small"
-    },
+    "name": "Shaffer",
     "company": "ZOUNDS",
     "email": "shaffer.small@zounds.name",
     "phone": "+1 (956) 422-3141",
@@ -23,10 +20,7 @@
     "balance": "$1,661.18",
     "age": 24,
     "eyeColor": "blue",
-    "name": {
-      "first": "Eddie",
-      "last": "Zamora"
-    },
+    "name": "Eddie",
     "company": "KLUGGER",
     "email": "eddie.zamora@klugger.us",
     "phone": "+1 (819) 463-3702",
@@ -40,10 +34,7 @@
     "balance": "$3,023.93",
     "age": 34,
     "eyeColor": "green",
-    "name": {
-      "first": "Rosalie",
-      "last": "Arnold"
-    },
+    "name": "Rosalie",
     "company": "KENEGY",
     "email": "rosalie.arnold@kenegy.info",
     "phone": "+1 (939) 462-2422",
@@ -57,10 +48,7 @@
     "balance": "$3,751.07",
     "age": 20,
     "eyeColor": "brown",
-    "name": {
-      "first": "Andrea",
-      "last": "Hines"
-    },
+    "name": "Andrea",
     "company": "FANGOLD",
     "email": "andrea.hines@fangold.co.uk",
     "phone": "+1 (842) 570-3906",
@@ -74,10 +62,7 @@
     "balance": "$1,400.25",
     "age": 40,
     "eyeColor": "blue",
-    "name": {
-      "first": "Leann",
-      "last": "Butler"
-    },
+    "name": "Leann",
     "company": "QUILCH",
     "email": "leann.butler@quilch.net",
     "phone": "+1 (871) 559-3608",
@@ -91,10 +76,7 @@
     "balance": "$1,724.79",
     "age": 34,
     "eyeColor": "blue",
-    "name": {
-      "first": "Jaclyn",
-      "last": "Harper"
-    },
+    "name": "Jaclyn",
     "company": "ANDRYX",
     "email": "jaclyn.harper@andryx.me",
     "phone": "+1 (934) 442-3858",
@@ -108,10 +90,7 @@
     "balance": "$2,784.91",
     "age": 37,
     "eyeColor": "green",
-    "name": {
-      "first": "Gallegos",
-      "last": "Lowe"
-    },
+    "name": "Gallegos",
     "company": "LUDAK",
     "email": "gallegos.lowe@ludak.ca",
     "phone": "+1 (994) 508-2412",
@@ -125,10 +104,7 @@
     "balance": "$3,949.84",
     "age": 32,
     "eyeColor": "green",
-    "name": {
-      "first": "Petty",
-      "last": "Rosario"
-    },
+    "name": "Petty",
     "company": "TERASCAPE",
     "email": "petty.rosario@terascape.biz",
     "phone": "+1 (838) 405-2196",
@@ -142,10 +118,7 @@
     "balance": "$1,588.64",
     "age": 33,
     "eyeColor": "brown",
-    "name": {
-      "first": "Juanita",
-      "last": "Cooke"
-    },
+    "name": "Juanita",
     "company": "ZOMBOID",
     "email": "juanita.cooke@zomboid.io",
     "phone": "+1 (858) 501-3310",
@@ -159,10 +132,7 @@
     "balance": "$3,540.13",
     "age": 35,
     "eyeColor": "blue",
-    "name": {
-      "first": "Maricela",
-      "last": "Morrow"
-    },
+    "name": "Maricela",
     "company": "RADIANTIX",
     "email": "maricela.morrow@radiantix.biz",
     "phone": "+1 (932) 513-2097",
@@ -176,10 +146,7 @@
     "balance": "$2,351.56",
     "age": 26,
     "eyeColor": "brown",
-    "name": {
-      "first": "Cain",
-      "last": "Stout"
-    },
+    "name": "Cain",
     "company": "PRINTSPAN",
     "email": "cain.stout@printspan.org",
     "phone": "+1 (835) 552-2401",
@@ -193,10 +160,7 @@
     "balance": "$2,834.81",
     "age": 37,
     "eyeColor": "blue",
-    "name": {
-      "first": "Walter",
-      "last": "Bond"
-    },
+    "name": "Walter",
     "company": "OVIUM",
     "email": "walter.bond@ovium.com",
     "phone": "+1 (983) 581-3637",
@@ -210,10 +174,7 @@
     "balance": "$2,377.45",
     "age": 20,
     "eyeColor": "green",
-    "name": {
-      "first": "Osborn",
-      "last": "Stark"
-    },
+    "name": "Osborn",
     "company": "CORPORANA",
     "email": "osborn.stark@corporana.name",
     "phone": "+1 (885) 531-2494",
@@ -227,10 +188,7 @@
     "balance": "$3,758.56",
     "age": 29,
     "eyeColor": "green",
-    "name": {
-      "first": "April",
-      "last": "Hays"
-    },
+    "name": "April",
     "company": "FROLIX",
     "email": "april.hays@frolix.us",
     "phone": "+1 (932) 427-3476",
@@ -244,10 +202,7 @@
     "balance": "$2,447.14",
     "age": 31,
     "eyeColor": "blue",
-    "name": {
-      "first": "Angeline",
-      "last": "Cobb"
-    },
+    "name": "Angeline",
     "company": "ESCENTA",
     "email": "angeline.cobb@escenta.info",
     "phone": "+1 (945) 437-2174",
@@ -261,10 +216,7 @@
     "balance": "$3,312.66",
     "age": 24,
     "eyeColor": "brown",
-    "name": {
-      "first": "Byers",
-      "last": "Bauer"
-    },
+    "name": "Byers",
     "company": "NSPIRE",
     "email": "byers.bauer@nspire.co.uk",
     "phone": "+1 (981) 483-3739",
@@ -278,10 +230,7 @@
     "balance": "$2,309.55",
     "age": 29,
     "eyeColor": "brown",
-    "name": {
-      "first": "Mcknight",
-      "last": "Ferrell"
-    },
+    "name": "Mcknight",
     "company": "ELPRO",
     "email": "mcknight.ferrell@elpro.net",
     "phone": "+1 (893) 576-3007",
@@ -295,10 +244,7 @@
     "balance": "$3,992.14",
     "age": 22,
     "eyeColor": "blue",
-    "name": {
-      "first": "Leanna",
-      "last": "Sampson"
-    },
+    "name": "Leanna",
     "company": "INCUBUS",
     "email": "leanna.sampson@incubus.me",
     "phone": "+1 (986) 557-2781",
@@ -312,10 +258,7 @@
     "balance": "$3,488.54",
     "age": 29,
     "eyeColor": "green",
-    "name": {
-      "first": "Simone",
-      "last": "Good"
-    },
+    "name": "Simone",
     "company": "GYNK",
     "email": "simone.good@gynk.ca",
     "phone": "+1 (994) 594-3043",
@@ -329,10 +272,7 @@
     "balance": "$1,804.88",
     "age": 28,
     "eyeColor": "brown",
-    "name": {
-      "first": "Nicole",
-      "last": "Serrano"
-    },
+    "name": "Nicole",
     "company": "RAMJOB",
     "email": "nicole.serrano@ramjob.biz",
     "phone": "+1 (960) 442-3997",
@@ -346,10 +286,7 @@
     "balance": "$2,175.86",
     "age": 24,
     "eyeColor": "blue",
-    "name": {
-      "first": "Marianne",
-      "last": "Schultz"
-    },
+    "name": "Marianne",
     "company": "XYMONK",
     "email": "marianne.schultz@xymonk.io",
     "phone": "+1 (969) 526-2731",
@@ -363,10 +300,7 @@
     "balance": "$1,102.00",
     "age": 27,
     "eyeColor": "blue",
-    "name": {
-      "first": "House",
-      "last": "Boyer"
-    },
+    "name": "House",
     "company": "AVIT",
     "email": "house.boyer@avit.biz",
     "phone": "+1 (991) 493-2554",
@@ -380,10 +314,7 @@
     "balance": "$3,098.48",
     "age": 34,
     "eyeColor": "blue",
-    "name": {
-      "first": "Sherry",
-      "last": "Nicholson"
-    },
+    "name": "Sherry",
     "company": "TWIIST",
     "email": "sherry.nicholson@twiist.org",
     "phone": "+1 (836) 547-2206",
@@ -397,10 +328,7 @@
     "balance": "$2,199.32",
     "age": 22,
     "eyeColor": "brown",
-    "name": {
-      "first": "Denise",
-      "last": "Martinez"
-    },
+    "name": "Denise",
     "company": "GEEKFARM",
     "email": "denise.martinez@geekfarm.com",
     "phone": "+1 (976) 572-3815",
@@ -414,10 +342,7 @@
     "balance": "$2,453.96",
     "age": 22,
     "eyeColor": "brown",
-    "name": {
-      "first": "Manning",
-      "last": "Poole"
-    },
+    "name": "Manning",
     "company": "GEOFORM",
     "email": "manning.poole@geoform.name",
     "phone": "+1 (928) 413-2162",
