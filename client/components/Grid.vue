@@ -1,6 +1,6 @@
 <template>
   <div class="gridWrapper">
-    <ag-grid-vue style="width: 100%; height: 350px;" class="ag-fresh"
+    <ag-grid-vue style="width: 100%; height: 500px;" class="ag-blue"
                  :gridOptions="gridOptions"
                  :rowData="gridData"
                  :columnDefs="gridColumns">
@@ -16,6 +16,7 @@
 <script>
   import Vue from "vue";
   import {AgGridVue} from "ag-grid-vue";
+  import "ag-grid-enterprise/main";
 
   export default {
     data () {
@@ -42,15 +43,35 @@
       },
       autoSizeAll() {
         this.gridOptions.columnApi.autoSizeColumns(this.$store.getters.getColumnsIDs);
+      },
+      isActiveColumn(params) {
+        let displayedColumns = params.columnApi.getDisplayNameForColumn(params.column)
+        return displayedColumns === 'isActive'
       }
     },
     beforeMount() {
-      this.gridOptions = {}
-      this.gridOptions.enableColResize = true
-      this.gridOptions.enableSorting =  true,
-      this.gridOptions.enableFilter = true,
-      this.createRowData()
+      this.gridOptions = {
+        defaultColDef: {
+          width: 150,
+          //headerCheckboxSelection: this.isActiveColumn,
+          //checkboxSelection: this.isActiveColumn,
+          editable: true
+        },
+        enableColResize: true,
+        enableSorting:  true,
+        enableFilter: true,
+        rowSelection: 'multiple',
+        showToolPanel: true,
+        toolPanelSuppressRowGroups: true,
+        toolPanelSuppressValues: true,
+        toolPanelSuppressPivots: true,
+        toolPanelSuppressPivotMode: true,
+        suppressRowClickSelection: true,
+        animateRows: true,
+        groupUseEntireRow: true
       }
+      this.createRowData()
+    }
   }
 </script>
 

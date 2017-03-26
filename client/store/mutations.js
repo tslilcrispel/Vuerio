@@ -10,8 +10,7 @@ export default {
     state.gridColumns = (Object.keys(data[0])).map(column => {
       return {
         headerName: column,
-        field: column,
-        width: 150
+        field: column
       }
     })
   }
