@@ -1,6 +1,6 @@
 <template>
   <div class="gridWrapper">
-    <ag-grid-vue style="width: 100%; height: 500px;" class="ag-blue"
+    <ag-grid-vue style="width: 100%; height: 500px;" class="ag-bootstrap"
                  :gridOptions="gridOptions"
                  :rowData="gridData"
                  :columnDefs="gridColumns">
@@ -9,7 +9,6 @@
     <div v-for="dataRow in gridColumns" style="display: none">
       <p>{{ dataRow }}</p>
     </div>
-    <button @click="autoSizeAll">Auto Size Columns</button>
   </div>
 </template>
 
@@ -41,13 +40,16 @@
       createRowData() {
         this.$store.dispatch('getGridData')
       },
-      autoSizeAll() {
-        this.gridOptions.columnApi.autoSizeColumns(this.$store.getters.getColumnsIDs);
-      },
       isActiveColumn(params) {
         let displayedColumns = params.columnApi.getDisplayNameForColumn(params.column)
         return displayedColumns === 'isActive'
-      }
+      },
+      calculateRowCount() {
+          let model = this.gridOptions.api.getModel()
+          let totalRows = this.rowData.length
+          let processedRows = model.getRowCount()
+          this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString()
+      },
     },
     beforeMount() {
       this.gridOptions = {
@@ -77,9 +79,41 @@
 
 <style>
   .gridWrapper {
-    width: 1000px;
     margin: auto;
     margin-top: 20px;
+  }
+
+  .ag-tool-panel {
+    text-align: left;
+  }
+
+  .ag-column-select-panel {
+    border-bottom: none;
+  }
+
+  .ag-header-cell {
+    background-color: #f04242;
+    color: #fff;
+  }
+
+  .ag-header-row {
+    background-color: #fff;
+    .ag-header-group-cell {
+      border: 1px solid #ccc;
+      border-bottom: none;
+    }
+  }
+
+  .ag-body-viewport-wrapper {
+    text-align: left;
+  }
+
+  .ag-header {
+    background-color: #fff;
+  }
+
+  .ag-bootstrap .ag-ltr .ag-header-cell {
+    border-right: 1px solid white;
   }
 </style>
 

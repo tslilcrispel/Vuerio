@@ -7,11 +7,21 @@ export default {
     state.gridData = data
   },
   createGridColumns(state, data) {
-    state.gridColumns = (Object.keys(data[0])).map(column => {
+    /*state.gridColumns = (Object.keys(data[0])).map(column => {
       return {
         headerName: column,
         field: column
       }
-    })
+    })*/
+    state.gridColumns.push(
+      {
+        headerName: "Athlete Details",
+        children: (Object.keys(data[0])).map(column => {
+          return {
+            headerName: column,
+            field: column
+          }})
+      }
+    )
   }
 }

@@ -1,0 +1,57 @@
+<template>
+  <vue-query-builder
+    :rules="rules"
+    :maxDepth="2"
+    @queryUpdated="queryUpdated"
+  ></vue-query-builder>
+</template>
+<script>
+  import vSelect from "vue-select"
+  import VueQueryBuilder from 'vue-query-builder'
+
+  export default {
+    components: {vSelect, VueQueryBuilder},
+
+    data() {
+      return {
+        selected: null,
+        options: ['foo', 'bar', 'baz'],
+        rules: [
+          {
+            type: "text",
+            id: "first-name",
+            label: "First Name",
+          },
+          {
+            type: "text",
+            id: "last-name",
+            label: "Last Name",
+          },
+          {
+            type: "radio",
+            id: "plan-type",
+            label: "Plan Type",
+            choices: [
+              {label: "Standard", value: "standard"},
+              {label: "Premium", value: "premium"}
+            ]
+          }
+        ]
+      }
+    },
+    methods: {
+      queryUpdated (query) {
+        this.query = query;
+      }
+    },
+    beforeMount() {
+
+    }
+  }
+</script>
+
+<style>
+  .selecter {
+    background-color: #fff;
+  }
+</style>
