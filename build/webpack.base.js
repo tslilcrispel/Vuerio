@@ -66,6 +66,12 @@ module.exports = {
       template: path.resolve(__dirname, 'index.html'),
       filename: _.outputIndexPath
     }),
+    new webpack.ProvidePlugin({
+    $: 'jquery',
+    jquery: 'jquery',
+    'window.jQuery': 'jquery',
+    jQuery: 'jquery'
+  	}),
     new webpack.LoaderOptionsPlugin(_.loadersOptions()),
     new CopyWebpackPlugin([
       {

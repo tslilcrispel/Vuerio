@@ -1,11 +1,13 @@
 <template>
   <div id="app">
     <ul class="navigation">
-      <li><router-link to="/">Table</router-link></li>
-      <li><router-link to="/">Add</router-link></li>
-      <li><router-link to="/">Saved</router-link></li>
+      <li><img src="../images/mariologo.png" style="height: 50px; float: left"/></li>
+      <li class="router-link"><router-link to="/">Table</router-link></li>
+      <li class="router-link"><router-link to="/">Add</router-link></li>
+      <li class="router-link"><router-link to="/">Saved</router-link></li>
     </ul>
     <router-view></router-view>
+    <footer id="footer">Zrif </footer>
   </div>
 </template>
 
@@ -22,10 +24,6 @@
     background: url(http://www.departika.com/wp-content/themes/departikaV2/img/background.jpg) repeat;
   }
 
-  .page {
-    text-align: center;
-  }
-  /* nesting for the need to test postcss */
   code {
     background-color: #f0f0f0;
     padding: 3px 5px;
@@ -41,26 +39,39 @@
     height: 48px;
   }
 
-  li {
+  .router-link {
     float: left;
   }
 
-  li a {
+  .router-link a {
     display: block;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
     color: #545454;
-    /*font-weight: bold;*/
   }
 
-  /* Change the link color to #111 (black) on hover */
-  li a:hover {
+  .router-link a:hover {
     color: #f04242;
-    border-bottom: 3px solid #f04242
+    border-bottom: 3px solid #f04242;
+    box-shadow: inset 0 -3px 0 #f04242;
+    text-decoration: none;
   }
 
   a {
     cursor: pointer;
+  }
+
+  #footer {
+    float: left;
+    height: 46px;
+    padding: 5px;
+    padding-top: 14px;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    text-align: left;
+    background-color: #fff;
   }
 </style>

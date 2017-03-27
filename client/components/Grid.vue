@@ -1,11 +1,12 @@
 <template>
-  <div class="gridWrapper">
+  <div class="gridWrapper col-sm-12">
     <ag-grid-vue style="width: 100%; height: 500px;" class="ag-bootstrap"
                  :gridOptions="gridOptions"
                  :rowData="gridData"
-                 :columnDefs="gridColumns">
+                 :columnDefs="gridColumns"
+                 :getMainMenuItems="getMainMenuItems">
     </ag-grid-vue>
-    <button @click="createRowData">Get Data</button>
+    <button class="btn btn-info" @click="createRowData">Get Data</button>
     <div v-for="dataRow in gridColumns" style="display: none">
       <p>{{ dataRow }}</p>
     </div>
@@ -22,7 +23,8 @@
       return {
         gridOptions: null,
         rowData: null,
-        columnDefs: null
+        columnDefs: null,
+        getMainMenuItems: null
       }
     },
     components: {
@@ -34,6 +36,24 @@
       },
       gridColumns() {
         return this.$store.state.gridColumns
+      },
+      getMainMenuItems() {
+        let athleteMenuItems = params.defaultItems.slice(0);
+        athleteMenuItems.push({
+          name: 'ag-Grid Is Great', action: function() {console.log('ag-Grid is great was selected');}
+        });
+        athleteMenuItems.push({
+          name: 'Casio Watch', action: function() {console.log('People who wear casio watches are cool');}
+        });
+        athleteMenuItems.push({
+          name: 'Custom Sub Menu',
+          subMenu: [
+            {name: 'Black', action: function() {console.log('Black was pressed');} },
+            {name: 'White', action: function() {console.log('White was pressed');} },
+            {name: 'Grey', action: function() {console.log('Grey was pressed');} }
+          ]
+        });
+        return athleteMenuItems;
       }
     },
     methods: {
@@ -55,8 +75,6 @@
       this.gridOptions = {
         defaultColDef: {
           width: 150,
-          //headerCheckboxSelection: this.isActiveColumn,
-          //checkboxSelection: this.isActiveColumn,
           editable: true
         },
         enableColResize: true,
@@ -70,7 +88,8 @@
         toolPanelSuppressPivotMode: true,
         suppressRowClickSelection: true,
         animateRows: true,
-        groupUseEntireRow: true
+        groupUseEntireRow: true,
+        getMainMenuItems: this.getMainMenuItems
       }
       this.createRowData()
     }
@@ -80,11 +99,7 @@
 <style>
   .gridWrapper {
     margin: auto;
-    margin-top: 20px;
-  }
-
-  .ag-tool-panel {
-    text-align: left;
+    margin-top: 40px;
   }
 
   .ag-column-select-panel {
@@ -104,16 +119,16 @@
     }
   }
 
-  .ag-body-viewport-wrapper {
-    text-align: left;
-  }
-
   .ag-header {
     background-color: #fff;
   }
 
   .ag-bootstrap .ag-ltr .ag-header-cell {
     border-right: 1px solid white;
+  }
+
+  .ag-bootstrap .ag-tool-panel {
+    background: rgba(177, 179, 178, 0.35);
   }
 </style>
 
