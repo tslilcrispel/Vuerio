@@ -23,5 +23,16 @@ export default {
           }})
       }
     )
+  },
+  createContextMenu(state, params) {
+    const contextMenu = ['copy','export', 'toolPanel', 'separator']
+    contextMenu.push(
+      {
+        name: 'Bo - ' + params.value,
+        shortcut: 'Alt + M',
+        action: state.connectFunction
+      }
+    )
+    state.contextMenu = contextMenu;
   }
 }

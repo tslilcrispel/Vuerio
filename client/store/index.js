@@ -9,7 +9,11 @@ Vue.use(Vuex)
 
 const state = {
   gridData: [],
-  gridColumns: []
+  gridColumns: [],
+  contextMenu: [],
+  connectFunction: function({ dispatch }){
+    dispatch('getGridData')
+  }
 }
 
 const store = new Vuex.Store({

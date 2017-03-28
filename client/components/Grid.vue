@@ -4,12 +4,9 @@
                  :gridOptions="gridOptions"
                  :rowData="gridData"
                  :columnDefs="gridColumns"
-                 :getMainMenuItems="getMainMenuItems">
+                 :getContextMenuItems="mainMenuItems">
     </ag-grid-vue>
     <button class="btn btn-info" @click="createRowData">Get Data</button>
-    <div v-for="dataRow in gridColumns" style="display: none">
-      <p>{{ dataRow }}</p>
-    </div>
   </div>
 </template>
 
@@ -23,8 +20,7 @@
       return {
         gridOptions: null,
         rowData: null,
-        columnDefs: null,
-        getMainMenuItems: null
+        columnDefs: null
       }
     },
     components: {
@@ -36,24 +32,6 @@
       },
       gridColumns() {
         return this.$store.state.gridColumns
-      },
-      getMainMenuItems() {
-        let athleteMenuItems = params.defaultItems.slice(0);
-        athleteMenuItems.push({
-          name: 'ag-Grid Is Great', action: function() {console.log('ag-Grid is great was selected');}
-        });
-        athleteMenuItems.push({
-          name: 'Casio Watch', action: function() {console.log('People who wear casio watches are cool');}
-        });
-        athleteMenuItems.push({
-          name: 'Custom Sub Menu',
-          subMenu: [
-            {name: 'Black', action: function() {console.log('Black was pressed');} },
-            {name: 'White', action: function() {console.log('White was pressed');} },
-            {name: 'Grey', action: function() {console.log('Grey was pressed');} }
-          ]
-        });
-        return athleteMenuItems;
       }
     },
     methods: {
@@ -61,15 +39,20 @@
         this.$store.dispatch('getGridData')
       },
       isActiveColumn(params) {
-        let displayedColumns = params.columnApi.getDisplayNameForColumn(params.column)
+        const displayedColumns = params.columnApi.getDisplayNameForColumn(params.column)
         return displayedColumns === 'isActive'
       },
       calculateRowCount() {
-          let model = this.gridOptions.api.getModel()
-          let totalRows = this.rowData.length
-          let processedRows = model.getRowCount()
-          this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString()
+        const model = this.gridOptions.api.getModel()
+        const totalRows = this.rowData.length
+        const processedRows = model.getRowCount()
+        this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString()
       },
+      mainMenuItems(params) {
+        
+        this.$store.commit('createContextMenu', params)
+        return this.$store.state.contextMenu
+      }
     },
     beforeMount() {
       this.gridOptions = {
@@ -78,8 +61,7 @@
           editable: true
         },
         enableColResize: true,
-        enableSorting:  true,
-        enableFilter: true,
+        enableSorting: true,
         rowSelection: 'multiple',
         showToolPanel: true,
         toolPanelSuppressRowGroups: true,
@@ -89,7 +71,7 @@
         suppressRowClickSelection: true,
         animateRows: true,
         groupUseEntireRow: true,
-        getMainMenuItems: this.getMainMenuItems
+        suppressMenuColumnPanel: true
       }
       this.createRowData()
     }
@@ -113,10 +95,11 @@
 
   .ag-header-row {
     background-color: #fff;
-    .ag-header-group-cell {
-      border: 1px solid #ccc;
-      border-bottom: none;
-    }
+  }
+
+  .ag-header-group-cell {
+    border: 1px solid #ccc;
+    border-bottom: none;
   }
 
   .ag-header {
