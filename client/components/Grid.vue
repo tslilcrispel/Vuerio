@@ -49,7 +49,7 @@
         this.rowCount = processedRows.toLocaleString() + ' / ' + totalRows.toLocaleString()
       },
       mainMenuItems(params) {
-        
+        this.$store.commit('changeConnectFunction', params)
         this.$store.commit('createContextMenu', params)
         return this.$store.state.contextMenu
       }

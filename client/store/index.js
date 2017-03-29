@@ -11,9 +11,10 @@ const state = {
   gridData: [],
   gridColumns: [],
   contextMenu: [],
-  connectFunction: function({ dispatch }){
-    dispatch('getGridData')
-  }
+  connectFunction: () => {
+    store.dispatch('getGridData', 'aba')
+  },
+
 }
 
 const store = new Vuex.Store({
