@@ -70,7 +70,7 @@
     padding: 0;
   }
 
-  .v-select input[type=search], .form-control {
+  /*.v-select input[type=search], .form-control {
     width: 0 !important;
-  }
+  }*/
 </style>

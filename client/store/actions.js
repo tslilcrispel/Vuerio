@@ -6,7 +6,6 @@ import request from 'axios'
 
 export default {
   getGridData({ commit }, params) {
-    console.log(params)
     const jsonData = require('./data.json');
     return request.get('/emptyUrl').then(response => {
       setTimeout(() => {

@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <ul class="navigation">
-      <li><img src="../images/mariologo.png" style="height: 50px; float: left"/></li>
+      <li><img src="../images/logo.jpg" style="height: 65px; float: left; margin-left: 10px; margin-top: 5px;"/></li>
       <li class="router-link"><router-link to="/">Table</router-link></li>
       <li class="router-link"><router-link to="/">Add</router-link></li>
       <li class="router-link"><router-link to="/">Saved</router-link></li>
@@ -14,6 +14,7 @@
 <style>
   body {
     margin: 0;
+    background-color: #eee !important;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont,
     'avenir next', avenir,
@@ -21,7 +22,7 @@
     Ubuntu,
     'segoe ui', arial,
     sans-serif;
-    background: url(http://www.departika.com/wp-content/themes/departikaV2/img/background.jpg) repeat;
+    /* background: url(http://www.departika.com/wp-content/themes/departikaV2/img/background.jpg) repeat; */
   }
 
   code {
@@ -36,7 +37,7 @@
     padding: 0;
     overflow: hidden;
     background-color: #fff;
-    height: 48px;
+    height: 75px;
   }
 
   .router-link {

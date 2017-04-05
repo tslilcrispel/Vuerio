@@ -4,7 +4,6 @@
       <selecter></selecter>
       <selecter></selecter>
     </div>
-    <img src="http://www.departika.com/wp-content/themes/departikaV2/img/red-notch.png" alt="" class="red_notch">
     <grid></grid>
   </div>
 </template>
@@ -29,13 +28,8 @@ export default {
 
 <style>
   .hoder {
-    border-bottom: 20px solid #f04242;
+    /* border-bottom: 20px solid #f04242; */
     min-height: 120px;
     padding: 20px;
-  }
-
-  .red_notch {
-    left: 49%;
-    position: absolute;
   }
 </style>
