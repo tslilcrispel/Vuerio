@@ -1,9 +1,11 @@
 <template>
   <div class="page">
     <div class="hoder">
+      <h2>מה לחפש?..</h2>
       <selecter></selecter>
       <selecter></selecter>
     </div>
+    <h2>איזה עומודות?..</h2>
     <grid></grid>
   </div>
 </template>

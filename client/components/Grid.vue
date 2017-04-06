@@ -6,7 +6,7 @@
                  :columnDefs="gridColumns"
                  :getContextMenuItems="mainMenuItems">
     </ag-grid-vue>
-    <button class="btn btn-info" @click="createRowData">Get Data</button>
+    <button class="btn btn-info" @click="createRowData">שלוף מידע</button>
   </div>
 </template>
 
@@ -71,7 +71,8 @@
         suppressRowClickSelection: true,
         animateRows: true,
         groupUseEntireRow: true,
-        suppressMenuColumnPanel: true
+        suppressMenuColumnPanel: true,
+        enableRtl: true
       }
       this.createRowData()
     }

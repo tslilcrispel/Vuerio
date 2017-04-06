@@ -1,17 +1,17 @@
 <template>
-  <div class="col-sm-3">
+  <div class="col-sm-3 pull-right">
+    <span class="no-pad col-sm-8">
+      <v-select class="selecter"
+                multiple
+                :value.sync="selected"
+                :options="options2"
+                placeholder="Value"></v-select>
+    </span>
     <span class="no-pad col-sm-4">
       <v-select class="selecter"
                 :value.sync="selected"
                 :options="options"
                 placeholder="Entity"></v-select>
-    </span>
-    <span class="no-pad col-sm-8">
-      <v-select class="selecter"
-              multiple
-              :value.sync="selected"
-              :options="options2"
-              placeholder="Value"></v-select>
     </span>
   </div>
 </template>

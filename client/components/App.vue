@@ -1,20 +1,23 @@
 <template>
   <div id="app">
-    <ul class="navigation">
-      <li><img src="../images/logo.jpg" style="height: 65px; float: left; margin-left: 10px; margin-top: 5px;"/></li>
-      <li class="router-link"><router-link to="/">Table</router-link></li>
-      <li class="router-link"><router-link to="/">Add</router-link></li>
-      <li class="router-link"><router-link to="/">Saved</router-link></li>
-    </ul>
+    <div class="navigation">
+      <ul class="container-fluid">
+        <li><img src="../images/logo.jpg" class="logo"/></li>
+        <li class="router-link"><router-link to="/">חיפוש</router-link></li>
+        <li class="router-link"><router-link to="/">הוספה</router-link></li>
+        <li class="router-link"><router-link to="/">שמורים</router-link></li>
+      </ul>
+    </div>
     <router-view></router-view>
-    <footer id="footer">Zrif </footer>
+    <footer id="footer">במבה </footer>
   </div>
 </template>
 
 <style>
   body {
     margin: 0;
-    background-color: #eee !important;
+    direction: rtl;
+    background-color: #eceff4 !important;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont,
     'avenir next', avenir,
@@ -31,31 +34,47 @@
     border-radius: 2px;
   }
 
-  .navigation {
+  .container-fluid {
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 15px;
+    padding-left: 15px;
     list-style-type: none;
+  }
+  .navigation {
     margin: 0;
-    padding: 0;
     overflow: hidden;
-    background-color: #fff;
-    height: 75px;
+    width: 100%;
+    height: 80px;
+    background: #fff;
+    border-bottom: solid 1px #c5d6de;
+    padding: 20px 0 0 15px;
+    z-index: 80;
   }
 
   .router-link {
-    float: left;
+    float: right;
+  }
+
+  .logo {
+    float: right;
+    height: 50px;
+    position: relative;
+    top: -5px;
+    display: block;
+    margin-left: 15px;
   }
 
   .router-link a {
     display: block;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
-    color: #545454;
+    color: #adb7be;
+    font-weight: bold
   }
 
   .router-link a:hover {
     color: #f04242;
-    border-bottom: 3px solid #f04242;
-    box-shadow: inset 0 -3px 0 #f04242;
     text-decoration: none;
   }
 
@@ -64,15 +83,15 @@
   }
 
   #footer {
-    float: left;
+    float: right;
     height: 46px;
     padding: 5px;
     padding-top: 14px;
     width: 100%;
     position: absolute;
-    left: 0;
+    right: 0;
     bottom: 0;
-    text-align: left;
+    text-align: right;
     background-color: #fff;
   }
 </style>
