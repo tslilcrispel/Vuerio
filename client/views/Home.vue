@@ -4,8 +4,8 @@
       <h2>מה לחפש?..</h2>
       <selecter></selecter>
       <selecter></selecter>
+      <h2>איזה עומודות?..</h2>
     </div>
-    <h2>איזה עומודות?..</h2>
     <grid></grid>
   </div>
 </template>

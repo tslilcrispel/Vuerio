@@ -2,7 +2,7 @@
   <div id="app">
     <div class="navigation">
       <ul class="container-fluid">
-        <li><img src="../images/logo.jpg" class="logo"/></li>
+        <li><router-link to="/"><img src="../images/logo2.png" class="logo"/></router-link></li>
         <li class="router-link"><router-link to="/">חיפוש</router-link></li>
         <li class="router-link"><router-link to="/">הוספה</router-link></li>
         <li class="router-link"><router-link to="/">שמורים</router-link></li>
