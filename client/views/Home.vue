@@ -2,9 +2,9 @@
   <div class="page">
     <div class="hoder">
       <h2>מה לחפש?..</h2>
-      <selecter></selecter>
-      <selecter></selecter>
-      <h2>איזה עומודות?..</h2>
+        <selecter></selecter>
+        <selecter></selecter>
+       <h2>איזה עומודות?..</h2>
     </div>
     <grid></grid>
   </div>

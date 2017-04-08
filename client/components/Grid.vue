@@ -72,7 +72,25 @@
         animateRows: true,
         groupUseEntireRow: true,
         suppressMenuColumnPanel: true,
-        enableRtl: true
+        enableRtl: true,
+        localeText: {
+          // enterprise menu
+          pinColumn: 'הצמד עמודה',
+          autosizeThiscolumn: 'התאם עמודה זאת',
+          autosizeAllColumns: 'התאם את כל העמודות',
+          resetColumns: 'החזר לגודל רגיל הכל',
+          toolPanel: 'סרגל כלים',
+
+          // enterprise menu pinning
+          pinLeft: 'הצמד לשמאל',
+          pinRight: 'הצמד לימין',
+          noPin: 'אסר הצמדה',
+          export: 'ייצא טבלה',
+
+          // standard menu
+          copy: 'העתק',
+          ctrlC: 'ctrl+C',
+        }
       }
       this.createRowData()
     }
@@ -90,7 +108,7 @@
   }
 
   .ag-header-cell {
-    background-color: #f04242;
+    background-color: #c0212f;
     color: #fff;
   }
 
@@ -113,6 +131,10 @@
 
   .ag-bootstrap .ag-tool-panel {
     background: rgba(177, 179, 178, 0.35);
+  }
+
+  .ag-rtl .ag-header-cell-resize {
+    background-color: #fdfce5;
   }
 </style>
 

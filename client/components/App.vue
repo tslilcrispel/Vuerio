@@ -2,7 +2,7 @@
   <div id="app">
     <div class="navigation">
       <ul class="container-fluid">
-        <li><router-link to="/"><img src="../images/logo2.png" class="logo"/></router-link></li>
+        <li><router-link to="/"><img src="../images/logi.png" class="logo"/></router-link></li>
         <li class="router-link"><router-link to="/">חיפוש</router-link></li>
         <li class="router-link"><router-link to="/">הוספה</router-link></li>
         <li class="router-link"><router-link to="/">שמורים</router-link></li>
@@ -46,7 +46,7 @@
     overflow: hidden;
     width: 100%;
     height: 80px;
-    background: #fff;
+    background: #c0212f;
     border-bottom: solid 1px #c5d6de;
     padding: 20px 0 0 15px;
     z-index: 80;
@@ -58,9 +58,9 @@
 
   .logo {
     float: right;
-    height: 50px;
+    height: 70px;
     position: relative;
-    top: -5px;
+    top: -15px;
     display: block;
     margin-left: 15px;
   }
@@ -69,7 +69,7 @@
     display: block;
     text-align: center;
     padding: 14px 16px;
-    color: #adb7be;
+    color: #fdfce5;
     font-weight: bold
   }
 
