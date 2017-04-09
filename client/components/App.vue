@@ -25,7 +25,6 @@
     Ubuntu,
     'segoe ui', arial,
     sans-serif;
-    /* background: url(http://www.departika.com/wp-content/themes/departikaV2/img/background.jpg) repeat; */
   }
 
   code {
@@ -94,4 +93,9 @@
     text-align: right;
     background-color: #fff;
   }
+
+  .flex {
+    display: flex;
+  }
+
 </style>

@@ -2,9 +2,14 @@
   <div class="page">
     <div class="hoder">
       <h2>מה לחפש?..</h2>
-        <selecter></selecter>
-        <selecter></selecter>
+      <button class="btn btn-default" @click="addSelecter">הוסף תנאי חיפוש</button>
+      <div class="select-container">
+        <div v-for="select in getSelecters">
+          <selecter v-bind:selectData='select'></selecter>
+        </div>
+      </div>
        <h2>איזה עומודות?..</h2>
+        <rowselect></rowselect>
     </div>
     <grid></grid>
   </div>
@@ -19,11 +24,28 @@
 
 import Grid from 'components/Grid'
 import Selecter from 'components/Selecter'
+import Rowselect from 'components/Rowselect'
 
 export default {
+  data () {
+    return {
+
+    }
+  },
   components: {
     Grid,
-    Selecter
+    Selecter,
+    Rowselect
+  },
+  computed: {
+    getSelecters() {
+      return this.$store.state.selecters
+    },
+  },
+  methods: {
+    addSelecter() {
+      this.$store.commit('addSelecter')
+    }
   }
 }
 </script>
@@ -33,5 +55,10 @@ export default {
     /* border-bottom: 20px solid #f04242; */
     min-height: 120px;
     padding: 20px;
+  }
+
+  .select-container {
+    display: flex;
+    flex-wrap: wrap;
   }
 </style>

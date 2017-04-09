@@ -14,7 +14,10 @@ const state = {
   connectFunction: () => {
     store.dispatch('getGridData', 'aba')
   },
-
+  selecters: [
+    {id: 0, option:'', value:''}
+  ],
+  selecterNextID: 0
 }
 
 const store = new Vuex.Store({

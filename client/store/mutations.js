@@ -33,5 +33,13 @@ export default {
     state.connectFunction = () => {
       store.dispatch('getGridData', params.value)
     }
+  },
+  addSelecter(state) {
+    state.selecterNextID ++
+    state.selecters.push({id: state.selecterNextID, option: '', value: ''})
+  },
+  removeSelecter(state, selectObj) {
+    const indexOfObject = state.selecters.indexOf(selectObj)
+    state.selecters.splice(indexOfObject, 1)
   }
 }

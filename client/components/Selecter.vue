@@ -1,62 +1,42 @@
 <template>
-  <div class="col-sm-3 pull-right">
-    <span class="no-pad col-sm-8">
-      <v-select class="selecter"
-                multiple
-                :value.sync="selected"
-                :options="options2"
-                placeholder="Value"></v-select>
-    </span>
-    <span class="no-pad col-sm-4">
+  <div class="flex m-l-md">
+    <button class="btn btn-default order-2" @click="removeSelecter(selectData)">הסר</button>
+    <span class="no-pad order-0">
       <v-select class="selecter"
                 :value.sync="selected"
                 :options="options"
-                placeholder="Entity"></v-select>
+                placeholder="בחר אופציה"
+                v-model="selectData.option"></v-select>
+    </span>
+    <span class="no-pad">
+      <v-select class="selecter order-1"
+                multiple
+                :value.sync="selected"
+                :options="options2"
+                v-if="selectData.option"
+                v-model="selectData.value"
+                placeholder="הכנס ערך"></v-select>
     </span>
   </div>
 </template>
 <script>
   import vSelect from "vue-select"
-  import VueQueryBuilder from 'vue-query-builder'
 
   export default {
-    components: {vSelect, VueQueryBuilder},
+    components: {vSelect},
 
     data() {
       return {
         selected: null,
         options: ['name', 'last_name', 'id', 'op', 'freeze', 'smoke'],
-        options2: ['tazlil', 'crispel', '12', 'bamba', 'bisli', 'chips'],
-        rules: [
-          {
-            type: "text",
-            id: "first-name",
-            label: "First Name",
-          },
-          {
-            type: "text",
-            id: "last-name",
-            label: "Last Name",
-          },
-          {
-            type: "radio",
-            id: "plan-type",
-            label: "Plan Type",
-            choices: [
-              {label: "Standard", value: "standard"},
-              {label: "Premium", value: "premium"}
-            ]
-          }
-        ]
+        options2: ['tazlil', 'crispel', '12', 'bamba', 'bisli', 'chips']
       }
     },
+    props: ['selectData'],
     methods: {
-      queryUpdated (query) {
-        this.query = query;
+      removeSelecter(selectObj) {
+        this.$store.commit('removeSelecter', selectObj)
       }
-    },
-    beforeMount() {
-
     }
   }
 </script>
@@ -68,6 +48,26 @@
 
   .no-pad {
     padding: 0;
+  }
+
+  .order-0 {
+    order: 0;
+  }
+
+  .order-1 {
+    order: 1;
+  }
+
+  .order-2 {
+    order: 2;
+  }
+
+  .v-select.searchable .dropdown-toggle {
+    display: flex;
+  }
+
+  .m-l-md {
+    margin-left: 15px ;
   }
 
   /*.v-select input[type=search], .form-control {
