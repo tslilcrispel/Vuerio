@@ -2,14 +2,13 @@
   <div id="app">
     <div class="navigation">
       <ul class="container-fluid">
-        <li><router-link to="/"><img src="../images/logi.png" class="logo"/></router-link></li>
+        <li><router-link to="/"><img src="../images/mariokid.png" class="logo"/>Mario</router-link></li>
         <li class="router-link"><router-link to="/">חיפוש</router-link></li>
         <li class="router-link"><router-link to="/">הוספה</router-link></li>
         <li class="router-link"><router-link to="/">שמורים</router-link></li>
       </ul>
     </div>
     <router-view></router-view>
-    <footer id="footer">במבה </footer>
   </div>
 </template>
 
@@ -45,7 +44,7 @@
     overflow: hidden;
     width: 100%;
     height: 80px;
-    background: #c0212f;
+    background: #fff;
     border-bottom: solid 1px #c5d6de;
     padding: 20px 0 0 15px;
     z-index: 80;
@@ -68,7 +67,7 @@
     display: block;
     text-align: center;
     padding: 14px 16px;
-    color: #fdfce5;
+    color: #e75645;
     font-weight: bold
   }
 
