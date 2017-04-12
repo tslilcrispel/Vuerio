@@ -1,11 +1,11 @@
 <template>
-  <div id="app">
-    <div class="navigation">
-      <ul class="container-fluid">
-        <li><router-link to="/"><img src="../images/mariokid.png" class="logo"/>Mario</router-link></li>
-        <li class="router-link"><router-link to="/">חיפוש</router-link></li>
-        <li class="router-link"><router-link to="/">הוספה</router-link></li>
-        <li class="router-link"><router-link to="/">שמורים</router-link></li>
+  <div id='app'>
+    <div class='navigation'>
+      <ul class='container-fluid'>
+        <li><router-link to="/"><img src="../images/mariokid.png" class='logo'/></router-link></li>
+        <li class='router-link'><router-link to="/">חיפוש</router-link></li>
+        <li class='router-link'><router-link to="/">הוספה</router-link></li>
+        <li class='router-link'><router-link to="/">שמורים</router-link></li>
       </ul>
     </div>
     <router-view></router-view>

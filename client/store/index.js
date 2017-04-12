@@ -15,7 +15,7 @@ const state = {
     store.dispatch('getGridData', 'aba')
   },
   selecters: [
-    {id: 0, option:'', value:''}
+    {id: 0, option:'', value:[]}
   ],
   selecterNextID: 0
 }

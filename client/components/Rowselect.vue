@@ -1,10 +1,10 @@
 <template>
-  <div>
+  <div class="row-selection">
     <v-select class="selecter"
               multiple
               :value.sync="selected"
               :options="options"
-              placeholder="הכנס ערך"></v-select>
+              placeholder="בחר עמודות לשליפה..."></v-select>
   </div>
 </template>
 
@@ -22,3 +22,10 @@
     }
   }
 </script>
+
+<style>
+  .row-selection {
+    margin-top: 20px;
+    width: 50%;
+  }
+</style>

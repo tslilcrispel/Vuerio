@@ -4,7 +4,7 @@
   "description": "My Superb Vue Project",
   "main": "client/index.js",
   "scripts": {
-    "test": "testcafe all tests/index.js --app \"npm run dev\" --app-init-delay 10000",
+    "test": "testcafe chrome tests/index.js --app \"npm run dev\" --app-init-delay 10000",
     "build": "webpack --config build/webpack.prod.js",
     "dev": "node build/server.js",
     "lint": "eslint client/* --ext .js --ext .vue"
@@ -18,6 +18,7 @@
     "axios": "^0.15.3",
     "babel-runtime": "^6.18.0",
     "bootstrap": "^3.3.7",
+    "bootstrap-vue": "^0.12.2",
     "jquery": "^3.2.1",
     "lodash": "^4.17.4",
     "moment": "^2.18.1",

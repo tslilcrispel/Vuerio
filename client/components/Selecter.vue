@@ -1,22 +1,21 @@
 <template>
-  <div class="flex m-l-md">
-    <button class="btn btn-default order-2" @click="removeSelecter(selectData)">הסר</button>
-    <span class="no-pad order-0">
+  <div class='flex m-l-md'>
+    <span class='no-pad'>
+      <v-select class='selecter'
+                :options='options'
+                placeholder='בחר אופציה'
+                v-model='selectData.option'></v-select>
+    </span>
+    <span class='no-pad'>
       <v-select class="selecter"
-                :value.sync="selected"
-                :options="options"
-                placeholder="בחר אופציה"
-                v-model="selectData.option"></v-select>
-    </span>
-    <span class="no-pad">
-      <v-select class="selecter order-1"
                 multiple
-                :value.sync="selected"
-                :options="options2"
-                v-if="selectData.option"
-                v-model="selectData.value"
-                placeholder="הכנס ערך"></v-select>
+                :options='options2'
+                v-if='selectData.option'
+                v-model='selectData.value'
+                :onChange='addSelecter'
+                placeholder='הכנס ערך'></v-select>
     </span>
+    <button class='btn btn-default btn-remove-condition' @click='removeSelecter(selectData)' >הסר</button>
   </div>
 </template>
 <script>
@@ -24,19 +23,29 @@
 
   export default {
     components: {vSelect},
-
     data() {
       return {
-        selected: null,
         options: ['name', 'last_name', 'id', 'op', 'freeze', 'smoke'],
         options2: ['tazlil', 'crispel', '12', 'bamba', 'bisli', 'chips']
       }
     },
-    props: ['selectData'],
+    props: [
+      'selectData'
+    ],
     methods: {
       removeSelecter(selectObj) {
         this.$store.commit('removeSelecter', selectObj)
+      },
+      addSelecter(selectedDataArr) {
+        if(selectedDataArr.length === 1 && this.addNewSelcterCondition) {
+          this.$store.commit('addSelecter')
+        }
       }
+    },
+    computed: {
+      addNewSelcterCondition() {
+        return this.$store.state.selecters.indexOf(this.selectData) === this.$store.state.selecters.length -1
+      },
     }
   }
 </script>
@@ -50,16 +59,8 @@
     padding: 0;
   }
 
-  .order-0 {
-    order: 0;
-  }
-
-  .order-1 {
-    order: 1;
-  }
-
-  .order-2 {
-    order: 2;
+  .condition-holder:last-child .btn-remove-condition {
+    display: none;
   }
 
   .v-select.searchable .dropdown-toggle {
@@ -69,8 +70,4 @@
   .m-l-md {
     margin-left: 15px ;
   }
-
-  /*.v-select input[type=search], .form-control {
-    width: 0 !important;
-  }*/
 </style>
