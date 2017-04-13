@@ -1,32 +1,53 @@
 <template>
   <div class='flex m-l-md'>
+    <a class='btn-remove-condition' @click='removeSelecter(selectData)' title="מחק"><icon name="times"></icon></a>
     <span class='no-pad'>
-      <v-select class='selecter'
-                :options='options'
-                placeholder='בחר אופציה'
-                v-model='selectData.option'></v-select>
+      <multiselect
+            v-model="selectData.option"
+            placeholder="בחר אופציה"
+            :options="options"
+            :searchable="true"
+            selectLabel=""
+            deselectLabel=""
+            selectedLabel=""
+          >
+      </multiselect>
     </span>
     <span class='no-pad'>
-      <v-select class="selecter"
-                multiple
-                :options='options2'
-                v-if='selectData.option'
-                v-model='selectData.value'
-                :onChange='addSelecter'
-                placeholder='הכנס ערך'></v-select>
+      <multiselect
+        v-model="selectData.value"
+        v-if='selectData.option'
+        placeholder="הכנס ערך"
+        :options="options2"
+        :searchable="true"
+        selectLabel=""
+        deselectLabel=""
+        :multiple="true"
+        :close-on-select="false"
+        @input="addSelecter"
+        selectedLabel=""
+      >
+      </multiselect>
     </span>
-    <button class='btn btn-default btn-remove-condition' @click='removeSelecter(selectData)' >הסר</button>
   </div>
 </template>
 <script>
-  import vSelect from "vue-select"
+
+  import Multiselect from 'vue-multiselect'
+  import 'vue-awesome/icons/times'
+
+  import Icon from 'vue-awesome/components/Icon.vue'
 
   export default {
-    components: {vSelect},
+    components: {
+      Multiselect,
+      Icon
+    },
     data() {
       return {
         options: ['name', 'last_name', 'id', 'op', 'freeze', 'smoke'],
-        options2: ['tazlil', 'crispel', '12', 'bamba', 'bisli', 'chips']
+        options2: ['tazlil', 'crispel', '12', 'bamba', 'bisli', 'chips'],
+        value: null
       }
     },
     props: [
@@ -55,12 +76,21 @@
     background-color: #fff;
   }
 
-  .no-pad {
-    padding: 0;
+  .multiselect__element {
+    text-align: right;
+  }
+
+  .multiselect__tags {
+      padding: 8px 8px 0 40px;
+  }
+
+  .multiselect__select {
+    left: 1px;
+    right: auto;
   }
 
   .condition-holder:last-child .btn-remove-condition {
-    display: none;
+    visibility: hidden;
   }
 
   .v-select.searchable .dropdown-toggle {
@@ -70,4 +100,11 @@
   .m-l-md {
     margin-left: 15px ;
   }
+
+
+  .btn-remove-condition {
+    min-width: 20px;
+    color: #e75645;
+  }
+
 </style>

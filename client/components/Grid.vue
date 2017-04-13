@@ -108,7 +108,7 @@
   }
 
   .ag-header-cell {
-    background-color: #c0212f;
+    background-color: #e75645;
     color: #fff;
   }
 
@@ -134,7 +134,12 @@
   }
 
   .ag-rtl .ag-header-cell-resize {
-    background-color: #fdfce5;
+    background-color: #fccfa7;
   }
+
+  .multiselect__input, .multiselect__single {
+    width: 70px !important;
+  }
+
 </style>
 

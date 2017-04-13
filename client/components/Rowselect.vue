@@ -1,18 +1,24 @@
 <template>
   <div class="row-selection">
-    <v-select class="selecter"
-              multiple
-              :value.sync="selected"
-              :options="options"
-              placeholder="בחר עמודות לשליפה..."></v-select>
+    <multiselect
+      placeholder="בחר עמודות "
+      :options="options"
+      :searchable="true"
+      selectLabel=""
+      deselectLabel=""
+      :multiple="true"
+      :close-on-select="false"
+      selectedLabel=""
+    >
+    </multiselect>
   </div>
 </template>
 
 <script>
-  import vSelect from "vue-select"
+  import Multiselect from 'vue-multiselect'
 
   export default {
-    components: {vSelect},
+    components: {Multiselect},
 
     data() {
       return {
@@ -27,5 +33,9 @@
   .row-selection {
     margin-top: 20px;
     width: 50%;
+  }
+
+  .multiselect__tags {
+    text-align: right;
   }
 </style>

@@ -2,21 +2,35 @@
   <div id='app'>
     <div class='navigation'>
       <ul class='container-fluid'>
-        <li><router-link to="/"><img src="../images/mariokid.png" class='logo'/></router-link></li>
-        <li class='router-link'><router-link to="/">חיפוש</router-link></li>
-        <li class='router-link'><router-link to="/">הוספה</router-link></li>
-        <li class='router-link'><router-link to="/">שמורים</router-link></li>
+        <li><router-link to="/"><img src="../images/logo.jpg" class='logo'/></router-link></li>
+        <li class='router-link'><router-link to="/"><icon name="search" style="margin-left: 10px"></icon>חיפוש</router-link></li>
+        <li class='router-link'><router-link to="/"><icon name="plus" style="margin-left: 10px"></icon>הוספה</router-link></li>
+        <li class='router-link'><router-link to="/"><icon name="floppy-o" style="margin-left: 10px"></icon>שמורים</router-link></li>
       </ul>
     </div>
     <router-view></router-view>
   </div>
 </template>
 
+<script>
+  //
+  import 'vue-awesome/icons/search'
+  import 'vue-awesome/icons/plus'
+  import 'vue-awesome/icons/floppy-o'
+
+  import Icon from 'vue-awesome/components/Icon.vue'
+  export default {
+    components: {
+      Icon
+    }
+  }
+</script>
+
 <style>
   body {
     margin: 0;
     direction: rtl;
-    background-color: #eceff4 !important;
+    background-color: #eee !important;
     font-size: 15px;
     font-family: -apple-system, BlinkMacSystemFont,
     'avenir next', avenir,
@@ -24,6 +38,11 @@
     Ubuntu,
     'segoe ui', arial,
     sans-serif;
+  }
+
+  .fa-icon {
+    width: auto;
+    height: 11px;
   }
 
   code {
@@ -40,40 +59,55 @@
     list-style-type: none;
   }
   .navigation {
-    margin: 0;
-    overflow: hidden;
-    width: 100%;
-    height: 80px;
     background: #fff;
-    border-bottom: solid 1px #c5d6de;
-    padding: 20px 0 0 15px;
-    z-index: 80;
+    border: none;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -webkit-box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    box-shadow: 0 0 15px rgba(0,0,0,0.5);
+    color: #9499af;
+    font-size: 0.9em;
+    font-weight: 600;
+    margin: 0;
+    min-height: 70px;
+    padding: 0 50px 0px 50px;
   }
 
   .router-link {
     float: right;
+    display: flex;
+    align-items: center;
   }
 
   .logo {
     float: right;
-    height: 70px;
+    height: 50px;
+    top: 10px;
     position: relative;
-    top: -15px;
     display: block;
     margin-left: 15px;
   }
 
   .router-link a {
-    display: block;
-    text-align: center;
-    padding: 14px 16px;
-    color: #e75645;
-    font-weight: bold
+    color: #9499af;
+    line-height: 60px;
+    padding: 0 0.9em;
+    font-weight: bold;
+    margin: 5px 0 0 0;
+    background: none;
+    font-size: 15px;
   }
 
   .router-link a:hover {
-    color: #f04242;
     text-decoration: none;
+    color: #281c4c;
+    border-bottom: 5px solid #f03512;
+  }
+
+  .router-link a:active {
+    text-decoration: none;
+    color: #281c4c;
+    border-bottom: 5px solid #f03512;
   }
 
   a {
@@ -95,6 +129,7 @@
 
   .flex {
     display: flex;
+    align-items: center;
   }
 
 </style>
