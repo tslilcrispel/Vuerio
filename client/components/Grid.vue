@@ -1,10 +1,11 @@
 <template>
   <div class="gridWrapper col-sm-12">
-    <ag-grid-vue style="width: 100%; height: 500px;" class="ag-bootstrap"
+    <ag-grid-vue style="width: 100%; height: 500px;" class="ag-bootstrap card-shadow"
                  :gridOptions="gridOptions"
                  :rowData="gridData"
                  :columnDefs="gridColumns"
-                 :getContextMenuItems="mainMenuItems">
+                 :getContextMenuItems="mainMenuItems"
+                 >
     </ag-grid-vue>
     <button class="btn btn-info" @click="createRowData">שלוף מידע</button>
   </div>
